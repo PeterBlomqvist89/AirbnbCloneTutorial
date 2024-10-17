@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Nunito } from "next/font/google";
+
 import "./globals.css";
 
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/modals/RegisterModal";
 import LoginModal from "./components/modals/LoginModal";
-import ToasterProvider from "./providers/ToasterProvider";
+import RentModal from "./components/modals/RentModal";
+
 import getCurrentUser from "./actions/getCurrentUsers";
+import ToasterProvider from "./providers/ToasterProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +38,7 @@ export default async function RootLayout({
           <ToasterProvider />
           <RegisterModal />
           <LoginModal />
+          <RentModal />
           <Navbar currentUser={currentUser} />
         </ClientOnly>
         {children}
