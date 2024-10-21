@@ -23,7 +23,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
   onAction,
   disabled,
   actionLabel,
-  actionId,
+  actionId = "",
   currentUser,
 }) => {
   const router = useRouter();
@@ -40,7 +40,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
       }
       onAction?.(actionId);
     },
-    [onAction, actionId]
+    [onAction, actionId, disabled]
   );
 
   return <div>Cards</div>;
