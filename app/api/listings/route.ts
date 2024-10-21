@@ -44,6 +44,6 @@ export async function POST(request: Request) {
       userId: currentUser.id,
     },
   });
-}
 
-//4:46
+  return NextResponse.json(listing);
+}
