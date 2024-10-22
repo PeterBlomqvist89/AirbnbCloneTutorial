@@ -21,7 +21,7 @@ const HeartButton: React.FC<HeartButtonProps> = ({
   return (
     <div
       onClick={toggleFavorite}
-      className="relative hover:opacity-80 transition cursor-pointer"
+      className="relative hover:opacity-80 transition cursor-pointer left-[90%]"
       style={{ width: "28px", height: "28px" }} // Fast storlek för att matcha största hjärtat
     >
       {/* Det större hjärtat */}
