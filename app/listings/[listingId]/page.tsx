@@ -16,7 +16,7 @@ const ListingPage = async ({ params }: { params: IParams }) => {
   }
 
   return (
-    <div>
+    <div className="">
       <ListingClient listing={listing} currentUser={currentUser} />
     </div>
   );
