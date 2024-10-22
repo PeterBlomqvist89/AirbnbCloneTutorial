@@ -5,7 +5,7 @@ import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import { categories } from "@/app/components/navbar/Categories";
 import { SafeUser } from "@/app/types";
-import { Listing, Reservation, User } from "@prisma/client";
+import { Listing, Reservation } from "@prisma/client";
 import { useMemo } from "react";
 
 interface ListingClientProps {
