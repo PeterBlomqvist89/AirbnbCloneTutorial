@@ -100,15 +100,6 @@ const ListingClient: React.FC<ListingClientProps> = ({
     return categories.find((item) => item.label === listing.category);
   }, [listing.category]);
 
-  const user: SafeUser = {
-    ...listing.user,
-    createdAt: listing.user.createdAt.toISOString(), // Konvertera till sträng
-    updatedAt: listing.user.updatedAt.toISOString(), // Konvertera till sträng
-    emailVerified: listing.user.emailVerified
-      ? listing.user.emailVerified.toISOString()
-      : null,
-  };
-
   return (
     <Container>
       <div className="max-w-screen-lg mx-auto">
@@ -122,7 +113,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
           />
           <div className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6 ">
             <ListingInfo
-              user={user}
+              user={listing.user}
               category={category}
               description={listing.description}
               roomCount={listing.roomCount}
