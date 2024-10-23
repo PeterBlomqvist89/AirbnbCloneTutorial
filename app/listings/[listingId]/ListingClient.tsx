@@ -9,9 +9,8 @@ import ListingInfo from "@/app/components/listings/ListingInfo";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import ListingReservation from "@/app/components/listings/ListingReservation";
 import { categories } from "@/app/components/navbar/Categories";
-import { SafeReservation, SafeUser } from "@/app/types";
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { ListingWithUser } from "@/app/types/ListingWithUser";
 import { useRouter } from "next/navigation";
 import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
 import { Range } from "react-date-range";
@@ -24,14 +23,16 @@ const initialDateRange = {
 
 interface ListingClientProps {
   reservations?: SafeReservation[];
-  listing: ListingWithUser;
+  listing: SafeListing & {
+    user: SafeUser;
+  };
   currentUser?: SafeUser | null;
 }
 
 const ListingClient: React.FC<ListingClientProps> = ({
   listing,
-  reservations = [],
   currentUser,
+  reservations = [],
 }) => {
   const loginModal = useLoginModal();
   const router = useRouter();
