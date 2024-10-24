@@ -40,7 +40,12 @@ const RegisterModal = () => {
     axios
       .post("/api/register", data)
       .then(() => {
-        registerModal.onClose();
+        signIn("credentials", {
+          email: data.email,
+          password: data.password,
+          redirect: true, // Redirect to a page after login
+          callbackUrl: "/", // Redirect to a specific page
+        });
       })
       .catch((error) => {
         console.error(error);
